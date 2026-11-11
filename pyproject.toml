@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adv-repro"
+version = "0.1.0"
+description = "Reproduction of 'Explaining and Harnessing Adversarial Examples' (Goodfellow, Shlens, Szegedy, ICLR 2015)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Corrosifu" }]
+dependencies = ["numpy>=1.26", "tensorflow>=2.16", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+advrepro = "adv_repro.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+extend-exclude = ["legacy"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/adv_repro/report.py" = ["E501"]  # table of long metric names and human-readable labels

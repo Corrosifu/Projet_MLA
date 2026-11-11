@@ -1,0 +1,5 @@
+# Runtime dependencies (see pyproject.toml). Keras 3 ships with TensorFlow >= 2.16.
+# tensorflow_addons is NOT needed any more: it is end-of-life, and the maxout layer is now native.
+numpy>=1.26
+tensorflow>=2.16
+matplotlib>=3.8
