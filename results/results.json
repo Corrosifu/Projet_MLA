@@ -1,0 +1,173 @@
+{
+  "logistic_3v7": {
+    "clean_error": 0.022080471050049066,
+    "clean_confidence": 0.9716780185699463,
+    "adv_error": 0.9995093228655545,
+    "adv_confidence_on_mistakes": 0.9966672658920288,
+    "autodiff_matches_closed_form": 1.0
+  },
+  "softmax": {
+    "clean_error": 0.0751,
+    "clean_confidence": 0.9062366485595703,
+    "adv_error": 1.0,
+    "adv_confidence_on_mistakes": 0.9054468870162964
+  },
+  "maxout": {
+    "clean_error": 0.0179,
+    "clean_confidence": 0.9928260445594788,
+    "adv_error": 0.9191,
+    "adv_confidence_on_mistakes": 0.9448553919792175,
+    "transfer_to_adv_trained_error": 0.233
+  },
+  "maxout_adv_trained": {
+    "clean_error": 0.0211,
+    "clean_confidence": 0.9839769601821899,
+    "adv_error": 0.1079,
+    "adv_confidence_on_mistakes": 0.6996148228645325,
+    "best_epoch": 23,
+    "transfer_to_standard_error": 0.7232
+  },
+  "pgd": {
+    "steps": 20,
+    "maxout": {
+      "fgsm_error": 0.9191,
+      "pgd_error": 1.0
+    },
+    "maxout_adv_trained": {
+      "fgsm_error": 0.1079,
+      "pgd_error": 0.9824
+    }
+  },
+  "noise_sign": {
+    "clean_error": 0.013,
+    "clean_confidence": 0.9946205019950867,
+    "adv_error": 0.6844,
+    "adv_confidence_on_mistakes": 0.9422336220741272
+  },
+  "noise_uniform": {
+    "clean_error": 0.0152,
+    "clean_confidence": 0.9941390752792358,
+    "adv_error": 0.8887,
+    "adv_confidence_on_mistakes": 0.9687314033508301
+  },
+  "rbf": {
+    "clean_error": 0.1761,
+    "clean_confidence": 0.25383031368255615,
+    "adv_error": 0.854,
+    "adv_confidence_on_mistakes": 0.12216219305992126
+  },
+  "transfer": {
+    "maxout_to_softmax_agreement": 0.5613099771515613,
+    "maxout_to_rbf_agreement": 0.25002720052225,
+    "maxout_to_softmax_agreement_both_wrong": 0.6550279329608939,
+    "maxout_to_rbf_agreement_both_wrong": 0.5841382816471784
+  },
+  "rubbish": {
+    "softmax": {
+      "error_rate": 0.9264,
+      "confidence_on_mistakes": 0.8593868017196655
+    },
+    "maxout": {
+      "error_rate": 0.9855,
+      "confidence_on_mistakes": 0.9289892911911011
+    },
+    "maxout_adv_trained": {
+      "error_rate": 0.9789,
+      "confidence_on_mistakes": 0.911553680896759
+    },
+    "rbf": {
+      "error_rate": 0.0,
+      "confidence_on_mistakes": NaN
+    }
+  },
+  "error_vs_epsilon": {
+    "eps": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5
+    ],
+    "softmax": [
+      0.0751,
+      0.6206,
+      0.9635,
+      0.9992,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "maxout": [
+      0.0179,
+      0.247,
+      0.5017,
+      0.7124,
+      0.8546,
+      0.9191,
+      0.9493,
+      0.9648,
+      0.9737,
+      0.9801,
+      0.9837
+    ],
+    "maxout adv. trained": [
+      0.0211,
+      0.3963,
+      0.3434,
+      0.132,
+      0.085,
+      0.1079,
+      0.177,
+      0.2835,
+      0.4005,
+      0.5068,
+      0.5749
+    ],
+    "RBF": [
+      0.1761,
+      0.2623,
+      0.3713,
+      0.513,
+      0.6759,
+      0.854,
+      0.9361,
+      0.9675,
+      0.9818,
+      0.9902,
+      0.995
+    ]
+  },
+  "meta": {
+    "config": {
+      "dataset": "mnist",
+      "eps": 0.25,
+      "seed": 0,
+      "epochs_logistic": 10,
+      "epochs_softmax": 10,
+      "epochs_maxout": 20,
+      "epochs_adv": 30,
+      "epochs_rbf": 20,
+      "batch_size": 128,
+      "val_fraction": 0.1,
+      "controls": true,
+      "n_rubbish": 10000,
+      "out_dir": "results",
+      "fig_dir": "figures"
+    },
+    "runtime_seconds": 796.7,
+    "python": "3.13.18",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "numpy": "2.5.4"
+  }
+}
